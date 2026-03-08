@@ -1,7 +1,6 @@
 import ScrollyCanvas from '@/components/ScrollyCanvas';
 import Contact from '@/components/Contact';
-import OOHWorks from '@/components/OOHWorks';
-import WorkGrid from '@/components/WorkGrid';
+import CreativeReels from '@/components/CreativeReels';
 import ClientMarquee from '@/components/ClientMarquee';
 
 export default function Home() {
@@ -13,11 +12,8 @@ export default function Home() {
         <ScrollyCanvas />
       </div>
 
-      {/* Out of Home Highlights */}
-      <OOHWorks />
-
-      {/* Selected Works Grid */}
-      <WorkGrid />
+      {/* Creative Reels Showcase */}
+      <CreativeReels />
 
       {/* Client Marquee */}
       <ClientMarquee />
