@@ -1,25 +1,27 @@
 'use client';
 
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { videos } from '@/data/projects';
-import { Play } from 'lucide-react';
+import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function VideoCarousel() {
-  const targetRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+  const scroll = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const scrollAmount = window.innerWidth * 0.6; // Scroll by roughly the width of one card
+      carouselRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-transparent">
-      {/* Sticky Container */}
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
-        
-        {/* Section Header */}
-        <div className="container mx-auto px-4 md:px-8 mb-12">
+    <section className="relative py-24 bg-transparent">
+      {/* Section Header */}
+      <div className="container mx-auto px-4 md:px-8 mb-12 flex items-end justify-between">
+        <div>
           <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase text-[#1a1a1a]">
             Visuals to Real
           </h2>
@@ -27,41 +29,82 @@ export default function VideoCarousel() {
             Bringing concepts to life
           </p>
         </div>
+        
+        {/* Navigation Buttons (Desktop) */}
+        <div className="hidden md:flex gap-4">
+          <button 
+            onClick={() => scroll('left')}
+            className="p-3 rounded-full border border-[#1a1a1a]/20 hover:bg-[#1a1a1a]/10 transition-colors text-[#1a1a1a]"
+            aria-label="Previous video"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button 
+            onClick={() => scroll('right')}
+            className="p-3 rounded-full border border-[#1a1a1a]/20 hover:bg-[#1a1a1a]/10 transition-colors text-[#1a1a1a]"
+            aria-label="Next video"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
+      </div>
 
-        {/* Horizontal Scrolling Gallery */}
-        <motion.div style={{ x }} className="flex gap-8 px-4 md:px-8 w-[400vw] md:w-[250vw]">
-          {videos.map((video) => (
-            <div 
-              key={video.id} 
-              className="relative w-[85vw] md:w-[60vw] lg:w-[45vw] aspect-video flex-shrink-0 group overflow-hidden rounded-2xl border border-[#1a1a1a]/10 bg-black/5"
-            >
-              {/* Video Element */}
-              <video
-                src={video.src}
-                className="w-full h-full object-cover"
-                loop
-                muted
-                playsInline
-                controls
-                preload="metadata"
-              />
-              
-              {/* Custom Play Overlay (fades out when native controls are used or video starts) */}
-              <div className="absolute inset-0 pointer-events-none flex items-center justify-center bg-black/20 group-hover:opacity-0 transition-opacity duration-300">
-                <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1a1a1a] shadow-xl">
-                  <Play size={24} className="ml-1" />
-                </div>
-              </div>
-
-              {/* Title Overlay */}
-              <div className="absolute top-0 left-0 w-full p-6 bg-gradient-to-b from-black/60 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white font-bold text-xl tracking-tight drop-shadow-md">
-                  {video.title}
-                </h3>
+      {/* Horizontal Scrolling Gallery (Native Swipe & Snap) */}
+      <div 
+        ref={carouselRef}
+        className="flex gap-8 px-4 md:px-8 overflow-x-auto snap-x snap-mandatory pb-8"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {videos.map((video) => (
+          <div 
+            key={video.id} 
+            className="relative w-[85vw] md:w-[60vw] lg:w-[45vw] aspect-video flex-shrink-0 snap-center group overflow-hidden rounded-2xl border border-[#1a1a1a]/10 bg-black/5"
+          >
+            {/* 
+              Video Element with #t=0.001 
+              This forces the browser to fetch the first frame as a thumbnail poster 
+            */}
+            <video
+              src={`${video.src}#t=0.001`}
+              className="w-full h-full object-cover"
+              loop
+              muted
+              playsInline
+              controls
+              preload="metadata"
+            />
+            
+            {/* Custom Play Overlay (fades out when hovered or interacted with) */}
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center bg-black/20 group-hover:opacity-0 transition-opacity duration-300">
+              <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1a1a1a] shadow-xl">
+                <Play size={24} className="ml-1" />
               </div>
             </div>
-          ))}
-        </motion.div>
+
+            {/* Title Overlay */}
+            <div className="absolute top-0 left-0 w-full p-6 bg-gradient-to-b from-black/60 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+              <h3 className="text-white font-bold text-xl tracking-tight drop-shadow-md">
+                {video.title}
+              </h3>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      {/* Navigation Buttons (Mobile) */}
+      <div className="flex justify-center md:hidden gap-4 mt-4">
+        <button 
+          onClick={() => scroll('left')}
+          className="p-3 rounded-full border border-[#1a1a1a]/20 hover:bg-[#1a1a1a]/10 transition-colors text-[#1a1a1a]"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        <button 
+          onClick={() => scroll('right')}
+          className="p-3 rounded-full border border-[#1a1a1a]/20 hover:bg-[#1a1a1a]/10 transition-colors text-[#1a1a1a]"
+        >
+          <ChevronRight size={24} />
+        </button>
       </div>
     </section>
   );
