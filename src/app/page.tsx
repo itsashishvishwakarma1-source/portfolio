@@ -1,19 +1,19 @@
 import ScrollyCanvas from '@/components/ScrollyCanvas';
 import Contact from '@/components/Contact';
-import CreativeReels from '@/components/CreativeReels';
+import CategorizedGallery from '@/components/CategorizedGallery';
 import ClientMarquee from '@/components/ClientMarquee';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#121212] selection:bg-white/20">
+    <main className="min-h-screen selection:bg-black/10">
       
       {/* Scrollytelling Sequence */}
       <div className="relative">
         <ScrollyCanvas />
       </div>
 
-      {/* Creative Reels Showcase */}
-      <CreativeReels />
+      {/* Categorized Work Gallery */}
+      <CategorizedGallery />
 
       {/* Client Marquee */}
       <ClientMarquee />
