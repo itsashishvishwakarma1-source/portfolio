@@ -19,7 +19,7 @@ export default function CategorizedGallery() {
   }, {} as Record<string, Project[]>);
 
   return (
-    <section className="relative z-10 py-32">
+    <section className="relative z-10 py-24 bg-transparent border-t border-[#1a1a1a]/10">
       <div className="container mx-auto px-4 md:px-8">
         
         {/* Gallery Header */}
@@ -31,34 +31,44 @@ export default function CategorizedGallery() {
             A curated archive of creative discourse
           </p>
         </div>
+      </div>
 
-        {/* Categories Loop */}
-        <div className="flex flex-col gap-32">
-          {Object.entries(categories).map(([category, items]) => (
-            <div key={category} className="flex flex-col gap-12">
-              
-              {/* Category Title */}
-              <div className="border-b border-[#1a1a1a]/20 pb-4">
+      {/* Categories Loop */}
+      <div className="flex flex-col gap-24">
+        {Object.entries(categories).map(([category, items]) => (
+          <div key={category} className="flex flex-col">
+            
+            {/* Category Title */}
+            <div className="container mx-auto px-4 md:px-8 mb-8">
+              <div className="border-b border-[#1a1a1a]/20 pb-4 flex items-end justify-between">
                 <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1a1a1a]">
                   {category}
                 </h3>
+                <span className="text-sm font-mono text-[#1a1a1a]/50">
+                  {items.length} PROJECTS
+                </span>
               </div>
+            </div>
 
-              {/* Category Grid */}
-              <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            {/* Tinted Background Wrapper for Horizontal Scroll */}
+            <div className="bg-[#1a1a1a]/10 py-12">
+              {/* Horizontal Scroll Container */}
+              <div 
+                className="flex gap-6 overflow-x-auto snap-x snap-mandatory px-4 md:px-8 pb-4"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
                 {items.map((project) => (
                   <motion.div
                     key={project.id}
                     whileHover={{ y: -5 }}
                     onClick={() => setSelectedProject(project)}
-                    className="break-inside-avoid relative rounded-xl overflow-hidden cursor-pointer group shadow-lg bg-black/5"
+                    className="relative flex-shrink-0 w-[80vw] md:w-[45vw] lg:w-[30vw] aspect-[4/5] snap-center rounded-xl overflow-hidden cursor-pointer group shadow-lg bg-white/20 border border-white/30"
                   >
                     <Image
                       src={project.src}
                       alt={project.title}
-                      width={800}
-                      height={1000}
-                      className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                      fill
+                      className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
                     />
                     
                     {/* Hover Overlay */}
@@ -71,8 +81,9 @@ export default function CategorizedGallery() {
                 ))}
               </div>
             </div>
-          ))}
-        </div>
+            
+          </div>
+        ))}
       </div>
 
       <FullscreenGallery 
