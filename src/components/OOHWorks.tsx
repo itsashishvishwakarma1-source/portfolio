@@ -4,14 +4,14 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const wheelProjects = [
-  { id: 1, title: 'Neon Takeover', src: 'https://images.unsplash.com/photo-1555169062-013468b47731?q=80&w=2574&auto=format&fit=crop' },
-  { id: 2, title: 'Metro Campaign', src: 'https://images.unsplash.com/photo-1606144884260-239b0362cde2?q=80&w=2670&auto=format&fit=crop' },
-  { id: 3, title: 'Bus Shelter Ads', src: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2670&auto=format&fit=crop' },
-  { id: 4, title: 'Urban Projections', src: 'https://images.unsplash.com/photo-1534008897995-27a23e859048?q=80&w=2670&auto=format&fit=crop' },
-  { id: 5, title: 'Billboard Series', src: 'https://images.unsplash.com/photo-1473042904451-00171c69419d?q=80&w=2692&auto=format&fit=crop' },
-  { id: 6, title: 'Street Level', src: 'https://images.unsplash.com/photo-1523368735282-3e284a6c84c1?q=80&w=2670&auto=format&fit=crop' },
-  { id: 7, title: 'Transit Wraps', src: 'https://images.unsplash.com/photo-1510926569107-1602bd07f3cc?q=80&w=2669&auto=format&fit=crop' },
-  { id: 8, title: 'Digital Boards', src: 'https://images.unsplash.com/photo-1563968743333-044cef800547?q=80&w=2675&auto=format&fit=crop' },
+  { id: 1, title: 'Activation', src: '/projects/Activation/Swiggy-Makkhan-.jpg' },
+  { id: 2, title: 'BQS Design', src: '/projects/BQS/Amul Macho_vol 5.jpg' },
+  { id: 3, title: 'Billboard', src: '/projects/Billboard/Tanishq 2x1_day.jpg' },
+  { id: 4, title: 'AI Render', src: '/projects/AI Renders/Screenshot 2026-03-08 at 3.29.33 PM.png' },
+  { id: 5, title: 'Live Painting', src: '/projects/Activation/Live-Painting.jpg' },
+  { id: 6, title: 'Installation', src: '/projects/Installation/Screenshot 2026-03-08 at 3.24.51 PM.png' },
+  { id: 7, title: 'Print Ad', src: '/projects/Print Ad/1.jpg' },
+  { id: 8, title: 'Billboard Creative', src: '/projects/Billboard/Surprise-.jpg' },
 ];
 
 export default function OOHWorks() {
@@ -24,7 +24,6 @@ export default function OOHWorks() {
   });
 
   // Rotate based on scroll progress. 1 full spin for the sequence.
-  // Using -360 ensures exactly one complete revolution per full scroll of the container.
   const rotateY = useTransform(scrollYProgress, [0, 1], [0, -360]);
 
   return (
@@ -74,18 +73,16 @@ export default function OOHWorks() {
                     className="absolute inset-0 w-full h-full"
                     style={{ 
                       // Push each card outward perfectly from the center to form a ring. 
-                      // clamp restricts it so it never breaks layout boundaries on smaller screens.
                       transform: `translateZ(clamp(150px, 28vw, 450px))` 
                     }}
                   >
-                    {/* The actual visible card */}
                     <motion.div
                       className="absolute inset-0 w-full h-full group rounded-xl overflow-hidden border border-white/5 bg-[#1a1a1a]"
                     >
                       <img
                         src={project.src}
                         alt={project.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale-0 group-hover:grayscale-0"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale-0"
                       />
                     </motion.div>
                   </div>
@@ -93,7 +90,6 @@ export default function OOHWorks() {
               );
             })}
           </motion.div>
-          
         </div>
       </div>
     </section>
