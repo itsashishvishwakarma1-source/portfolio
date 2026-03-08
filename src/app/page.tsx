@@ -2,6 +2,7 @@ import ScrollyCanvas from '@/components/ScrollyCanvas';
 import Contact from '@/components/Contact';
 import OOHWorks from '@/components/OOHWorks';
 import WorkGrid from '@/components/WorkGrid';
+import ClientMarquee from '@/components/ClientMarquee';
 
 export default function Home() {
   return (
@@ -17,6 +18,9 @@ export default function Home() {
 
       {/* Selected Works Grid */}
       <WorkGrid />
+
+      {/* Client Marquee */}
+      <ClientMarquee />
 
       {/* Contact Section */}
       <Contact />
