@@ -1,6 +1,7 @@
 import ScrollyCanvas from '@/components/ScrollyCanvas';
 import Contact from '@/components/Contact';
 import CategorizedGallery from '@/components/CategorizedGallery';
+import VideoCarousel from '@/components/VideoCarousel';
 import ClientMarquee from '@/components/ClientMarquee';
 
 export default function Home() {
@@ -15,7 +16,11 @@ export default function Home() {
       {/* Categorized Work Gallery */}
       <CategorizedGallery />
 
+      {/* Visuals to Real Video Carousel */}
+      <VideoCarousel />
+
       {/* Client Marquee */}
+
       <ClientMarquee />
 
       {/* Contact Section */}

@@ -63,3 +63,18 @@ export const projects: Project[] = [
   // Story Board
   { id: 'sb1', title: 'Campaign Storyboard', category: 'Story Board', src: '/projects/Story Boards/Screenshot 2026-03-08 at 3.34.40 PM.png' },
 ];
+
+export interface VideoProject {
+  id: string;
+  title: string;
+  src: string;
+}
+
+export const videos: VideoProject[] = [
+  { id: 'v1', title: 'Anamorphic Display', src: '/projects/Visuals to Real/Anamorphic.mp4' },
+  { id: 'v2', title: 'Interactive Floor', src: '/projects/Visuals to Real/Man_Jumping_On_Lit_Tiles_Video.mp4' },
+  { id: 'v3', title: 'Moving Centerpiece', src: '/projects/Visuals to Real/Video_Generation_Moving_Canter.mp4' },
+  { id: 'v4', title: 'Walkthrough Gen 1', src: '/projects/Visuals to Real/Video_Walk_Through_Generation_1 02.mp4' },
+  { id: 'v5', title: 'Mia Bee Cab', src: '/projects/Visuals to Real/mia bee cab.mp4' },
+];
+
