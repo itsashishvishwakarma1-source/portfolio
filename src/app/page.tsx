@@ -15,14 +15,14 @@ export default function Home() {
         <ScrollyCanvas />
       </div>
 
-      {/* Categorized Work Gallery */}
+      {/* Categorized Work Gallery (Includes Billboard, BQS, Installation, Print Ad, AI Renders) */}
       <CategorizedGallery />
+
+      {/* Executed Work Bento Box (Placed immediately after AI Renders as requested) */}
+      <ExecutedWork />
 
       {/* How would it look in real Video Carousel */}
       <VideoCarousel />
-
-      {/* Executed Work Bento Box */}
-      <ExecutedWork />
 
       {/* Awards Showcase */}
       <Awards />

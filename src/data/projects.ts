@@ -9,36 +9,6 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // AI Renders
-  { id: 'ai1', title: 'Screenshot_2026-03-08_at_3.29.33_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.29.33_PM.png' },
-  { id: 'ai2', title: 'Screenshot_2026-03-08_at_3.29.47_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.29.47_PM.png' },
-  { id: 'ai3', title: 'Screenshot_2026-03-08_at_3.30.03_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.30.03_PM.png' },
-  { id: 'ai4', title: 'Screenshot_2026-03-08_at_3.46.28_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.46.28_PM.png' },
-  { id: 'ai5', title: 'Screenshot_2026-03-08_at_3.46.36_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.46.36_PM.png' },
-  { id: 'ai6', title: 'Screenshot_2026-03-08_at_3.46.44_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.46.44_PM.png' },
-  { id: 'ai7', title: 'Screenshot_2026-03-08_at_3.46.52_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.46.52_PM.png' },
-  { id: 'ai8', title: 'Screenshot_2026-03-08_at_3.47.06_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.47.06_PM.png' },
-  { id: 'ai9', title: 'gateway', category: 'AI Renders', type: 'video', src: '/projects/AI Renders/gateway.mp4' },
-  { id: 'ai10', title: 'snowingbillboard', category: 'AI Renders', type: 'video', src: '/projects/AI Renders/snowingbillboard.mp4' },
-  { id: 'ai11', title: 'swiggyholi', category: 'AI Renders', type: 'video', src: '/projects/AI Renders/swiggyholi.mp4' },
-
-  // Activation
-  { id: 'act1', title: 'Auto_Rikshaw_copy', category: 'Activation', src: '/projects/Activation/Auto_Rikshaw_copy.jpg' },
-  { id: 'act2', title: 'Live-Painting', category: 'Activation', src: '/projects/Activation/Live-Painting.jpg' },
-  { id: 'act3', title: 'Look-Walkers', category: 'Activation', src: '/projects/Activation/Look-Walkers.jpg' },
-  { id: 'act4', title: 'Screenshot_2026-03-08_at_3.36.05_PM', category: 'Activation', src: '/projects/Activation/Screenshot_2026-03-08_at_3.36.05_PM.png' },
-  { id: 'act5', title: 'Screenshot_2026-03-08_at_3.51.17_PM', category: 'Activation', src: '/projects/Activation/Screenshot_2026-03-08_at_3.51.17_PM.png' },
-  { id: 'act6', title: 'Swiggy-Makkhan-', category: 'Activation', src: '/projects/Activation/Swiggy-Makkhan-.jpg' },
-  { id: 'act7', title: 'health_activation', category: 'Activation', src: '/projects/Activation/health_activation.png' },
-  { id: 'act8', title: 'valientine', category: 'Activation', src: '/projects/Activation/valientine.png' },
-
-  // BQS
-  { id: 'bqs1', title: 'Amul_Macho_vol_5', category: 'BQS', src: '/projects/BQS/Amul_Macho_vol_5.jpg' },
-  { id: 'bqs2', title: 'Claw_bqs', category: 'BQS', src: '/projects/BQS/Claw_bqs.png' },
-  { id: 'bqs3', title: 'Screenshot_2026-03-08_at_3.45.03_PM', category: 'BQS', src: '/projects/BQS/Screenshot_2026-03-08_at_3.45.03_PM.png' },
-  { id: 'bqs4', title: 'Screenshot_2026-03-08_at_3.51.52_PM', category: 'BQS', src: '/projects/BQS/Screenshot_2026-03-08_at_3.51.52_PM.png' },
-  { id: 'bqs5', title: 'Transperent', category: 'BQS', src: '/projects/BQS/Transperent.png' },
-
   // Billboard
   { id: 'b1', title: 'Amulmacho_heater', category: 'Billboard', src: '/projects/Billboard/Amulmacho_heater.png' },
   { id: 'b2', title: 'Billord-', category: 'Billboard', src: '/projects/Billboard/Billord-.jpg' },
@@ -67,6 +37,13 @@ export const projects: Project[] = [
   { id: 'b25', title: 'polycab_bulb', category: 'Billboard', src: '/projects/Billboard/polycab_bulb.png' },
   { id: 'b26', title: 'polycab_pot', category: 'Billboard', src: '/projects/Billboard/polycab_pot.png' },
   { id: 'b27', title: 'swiggyholicollab', category: 'Billboard', src: '/projects/Billboard/swiggyholicollab.jpg' },
+
+  // BQS
+  { id: 'bqs1', title: 'Amul_Macho_vol_5', category: 'BQS', src: '/projects/BQS/Amul_Macho_vol_5.jpg' },
+  { id: 'bqs2', title: 'Claw_bqs', category: 'BQS', src: '/projects/BQS/Claw_bqs.png' },
+  { id: 'bqs3', title: 'Screenshot_2026-03-08_at_3.45.03_PM', category: 'BQS', src: '/projects/BQS/Screenshot_2026-03-08_at_3.45.03_PM.png' },
+  { id: 'bqs4', title: 'Screenshot_2026-03-08_at_3.51.52_PM', category: 'BQS', src: '/projects/BQS/Screenshot_2026-03-08_at_3.51.52_PM.png' },
+  { id: 'bqs5', title: 'Transperent', category: 'BQS', src: '/projects/BQS/Transperent.png' },
 
   // Installation
   { id: 'inst1', title: 'AMG', category: 'Installation', src: '/projects/Installation/AMG.png' },
@@ -97,12 +74,6 @@ export const projects: Project[] = [
   { id: 'inst26', title: 'polycab_pot', category: 'Installation', src: '/projects/Installation/polycab_pot.png' },
   { id: 'inst27', title: 'swiggy_tea', category: 'Installation', src: '/projects/Installation/swiggy_tea.png' },
 
-  // Story Boards
-  { id: 'sb1', title: 'AC_TVC', category: 'Story Boards', src: '/projects/Story Boards/AC_TVC.png' },
-  { id: 'sb2', title: 'CCL_Ad1', category: 'Story Boards', src: '/projects/Story Boards/CCL_Ad1.png' },
-  { id: 'sb3', title: 'CCL_Ad2', category: 'Story Boards', src: '/projects/Story Boards/CCL_Ad2.png' },
-  { id: 'sb4', title: 'Screenshot_2026-03-08_at_3.34.40_PM', category: 'Story Boards', src: '/projects/Story Boards/Screenshot_2026-03-08_at_3.34.40_PM.png' },
-
   // Print Ad
   { id: 'pr1', title: '1', category: 'Print Ad', src: '/projects/Print Ad/1.jpg' },
   { id: 'pr2', title: '10minute1', category: 'Print Ad', src: '/projects/Print Ad/10minute1.jpg' },
@@ -114,6 +85,39 @@ export const projects: Project[] = [
   { id: 'pr8', title: 'Screenshot_2026-03-08_at_3.33.40_PM', category: 'Print Ad', src: '/projects/Print Ad/Screenshot_2026-03-08_at_3.33.40_PM.png' },
   { id: 'pr9', title: 'girl_fight02_2', category: 'Print Ad', src: '/projects/Print Ad/girl_fight02_2.jpg' },
   { id: 'pr10', title: 'pregnant_lady_011', category: 'Print Ad', src: '/projects/Print Ad/pregnant_lady_011.jpg' },
+
+  // AI Renders
+  { id: 'ai1', title: 'Goldcab', category: 'AI Renders', src: '/projects/AI Renders/Goldcab.png' },
+  { id: 'ai2', title: 'AI_Render_1', category: 'AI Renders', src: '/projects/AI Renders/AI_Render_1.png' },
+  { id: 'ai3', title: 'AI_Render_2', category: 'AI Renders', src: '/projects/AI Renders/AI_Render_2.png' },
+  { id: 'ai4', title: 'AI_Render_3', category: 'AI Renders', src: '/projects/AI Renders/AI_Render_3.png' },
+  { id: 'ai5', title: 'AI_Render_4', category: 'AI Renders', src: '/projects/AI Renders/AI_Render_4.png' },
+  { id: 'ai6', title: 'AI_Render_5', category: 'AI Renders', src: '/projects/AI Renders/AI_Render_5.png' },
+  { id: 'ai7', title: 'AI_Render_6', category: 'AI Renders', src: '/projects/AI Renders/AI_Render_6.png' },
+  { id: 'ai8', title: 'AI_Render_7', category: 'AI Renders', src: '/projects/AI Renders/AI_Render_7.png' },
+  { id: 'ai9', title: 'AI_Render_8', category: 'AI Renders', src: '/projects/AI Renders/AI_Render_8.png' },
+  { id: 'ai10', title: 'Taniqsh_airportbg', category: 'AI Renders', src: '/projects/AI Renders/Taniqsh_airportbg.png' },
+  { id: 'ai11', title: 'Taniqsh_airportbg1', category: 'AI Renders', src: '/projects/AI Renders/Taniqsh_airportbg1.png' },
+  { id: 'ai12', title: 'UFO', category: 'AI Renders', src: '/projects/AI Renders/UFO.png' },
+  { id: 'ai13', title: 'gateway', category: 'AI Renders', type: 'video', src: '/projects/AI Renders/gateway.mp4' },
+  { id: 'ai14', title: 'snowingbillboard', category: 'AI Renders', type: 'video', src: '/projects/AI Renders/snowingbillboard.mp4' },
+  { id: 'ai15', title: 'swiggyholi', category: 'AI Renders', type: 'video', src: '/projects/AI Renders/swiggyholi.mp4' },
+
+  // Activation
+  { id: 'act1', title: 'Auto_Rikshaw_copy', category: 'Activation', src: '/projects/Activation/Auto_Rikshaw_copy.jpg' },
+  { id: 'act2', title: 'Live-Painting', category: 'Activation', src: '/projects/Activation/Live-Painting.jpg' },
+  { id: 'act3', title: 'Look-Walkers', category: 'Activation', src: '/projects/Activation/Look-Walkers.jpg' },
+  { id: 'act4', title: 'Screenshot_2026-03-08_at_3.36.05_PM', category: 'Activation', src: '/projects/Activation/Screenshot_2026-03-08_at_3.36.05_PM.png' },
+  { id: 'act5', title: 'Screenshot_2026-03-08_at_3.51.17_PM', category: 'Activation', src: '/projects/Activation/Screenshot_2026-03-08_at_3.51.17_PM.png' },
+  { id: 'act6', title: 'Swiggy-Makkhan-', category: 'Activation', src: '/projects/Activation/Swiggy-Makkhan-.jpg' },
+  { id: 'act7', title: 'health_activation', category: 'Activation', src: '/projects/Activation/health_activation.png' },
+  { id: 'act8', title: 'valientine', category: 'Activation', src: '/projects/Activation/valientine.png' },
+
+  // Story Boards
+  { id: 'sb1', title: 'AC_TVC', category: 'Story Boards', src: '/projects/Story Boards/AC_TVC.png' },
+  { id: 'sb2', title: 'CCL_Ad1', category: 'Story Boards', src: '/projects/Story Boards/CCL_Ad1.png' },
+  { id: 'sb3', title: 'CCL_Ad2', category: 'Story Boards', src: '/projects/Story Boards/CCL_Ad2.png' },
+  { id: 'sb4', title: 'Screenshot_2026-03-08_at_3.34.40_PM', category: 'Story Boards', src: '/projects/Story Boards/Screenshot_2026-03-08_at_3.34.40_PM.png' },
 ];
 
 export interface VideoProject {
