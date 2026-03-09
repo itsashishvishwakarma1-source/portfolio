@@ -46,26 +46,6 @@ export default function ExecutedWork() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 className={`relative rounded-2xl overflow-hidden group shadow-lg bg-black/5 border border-white/20 ${getGridClasses(project.format, index)}`}
-                onClick={(e) => {
-                  // Only open fullscreen for images. Videos natively play in place.
-                  if (project.type === 'image') {
-                    setSelectedImage({ src: project.src, title: project.title, category: 'Executed Work' });
-                  } else {
-                    // Prevent double-toggling if they clicked the native controls directly (bottom 15% of video)
-                    const rect = e.currentTarget.getBoundingClientRect();
-                    const clickY = e.clientY - rect.top;
-                    if (clickY > rect.height * 0.85) return; // Ignore clicks on the native controls area
-                    
-                    const videoEl = document.getElementById(`video-${project.id}`) as HTMLVideoElement;
-                    if (videoEl) {
-                      if (videoEl.paused) {
-                        videoEl.play();
-                      } else {
-                        videoEl.pause();
-                      }
-                    }
-                  }
-                }}
               >
                 {project.type === 'image' ? (
                   <>
@@ -74,6 +54,9 @@ export default function ExecutedWork() {
                       alt={project.title}
                       fill
                       className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out cursor-pointer"
+                      onClick={() => {
+                        setSelectedImage({ src: project.src, title: project.title, category: 'Executed Work' });
+                      }}
                     />
                     <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                       <h4 className="text-white text-xl font-bold tracking-tight drop-shadow-md">
@@ -84,23 +67,13 @@ export default function ExecutedWork() {
                 ) : (
                   <>
                     <video
-                      id={`video-${project.id}`}
-                      src={`${project.src}#t=0.001`}
-                      className="w-full h-full object-cover cursor-pointer"
+                      src={project.src}
+                      className="w-full h-full object-cover relative z-0"
+                      autoPlay
                       loop
                       muted
                       playsInline
-                      controls
-                      preload="metadata"
-                      onPlay={() => setPlayingVideos(prev => ({ ...prev, [project.id]: true }))}
-                      onPause={() => setPlayingVideos(prev => ({ ...prev, [project.id]: false }))}
                     />
-                    {/* Custom Play Overlay (fades out when native controls are used or video starts) */}
-                    <div className={`absolute inset-0 pointer-events-none flex items-center justify-center bg-black/20 transition-opacity duration-300 ${playingVideos[project.id] ? 'opacity-0' : 'group-hover:opacity-0'}`}>
-                      <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1a1a1a] shadow-xl">
-                        <Play size={24} className="ml-1" />
-                      </div>
-                    </div>
                     {/* Video Title Overlay */}
                     <div className="absolute top-0 left-0 w-full p-6 bg-gradient-to-b from-black/60 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                       <h3 className="text-white font-bold text-xl tracking-tight drop-shadow-md">
