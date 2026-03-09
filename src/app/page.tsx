@@ -2,6 +2,7 @@ import ScrollyCanvas from '@/components/ScrollyCanvas';
 import Contact from '@/components/Contact';
 import CategorizedGallery from '@/components/CategorizedGallery';
 import VideoCarousel from '@/components/VideoCarousel';
+import Awards from '@/components/Awards';
 import ClientMarquee from '@/components/ClientMarquee';
 
 export default function Home() {
@@ -19,8 +20,10 @@ export default function Home() {
       {/* Visuals to Real Video Carousel */}
       <VideoCarousel />
 
-      {/* Client Marquee */}
+      {/* Awards Showcase */}
+      <Awards />
 
+      {/* Client Marquee */}
       <ClientMarquee />
 
       {/* Contact Section */}
