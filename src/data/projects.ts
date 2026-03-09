@@ -52,8 +52,6 @@ export const projects: Project[] = [
 
   // Print Ad
   { id: 'pr1', title: 'Print Layout 01', category: 'Print Ad', src: '/projects/Print Ad/1.jpg' },
-  { id: 'pr2', title: 'Print Layout 02', category: 'Print Ad', src: '/projects/Print Ad/2.jpg' },
-  { id: 'pr3', title: 'Print Layout 03', category: 'Print Ad', src: '/projects/Print Ad/3.jpg' },
   { id: 'pr4', title: '10 Minute Delivery 1', category: 'Print Ad', src: '/projects/Print Ad/10minute1.jpg' },
   { id: 'pr5', title: '10 Minute Delivery 2', category: 'Print Ad', src: '/projects/Print Ad/10minute2.jpg' },
   { id: 'pr6', title: '10 Minute Delivery 3', category: 'Print Ad', src: '/projects/Print Ad/10minute3.jpg' },
@@ -62,7 +60,6 @@ export const projects: Project[] = [
   { id: 'pr9', title: 'GF & BF', category: 'Print Ad', src: '/projects/Print Ad/Gf_Bf.jpg' },
   { id: 'pr10', title: 'Newspaper Layout', category: 'Print Ad', src: '/projects/Print Ad/Newspaper_copy.jpg' },
   { id: 'pr11', title: 'Editorial Work', category: 'Print Ad', src: '/projects/Print Ad/Screenshot_2026-03-08_at_3.33.40 PM.png' },
-  { id: 'pr12', title: 'Ad Concept', category: 'Print Ad', src: '/projects/Print Ad/Screenshot_2026-03-08_at_3.34.02 PM.png' },
 
   // Story Board
   { id: 'sb1', title: 'Campaign Storyboard', category: 'Story Board', src: '/projects/Story Boards/Screenshot 2026-03-08 at 3.34.40 PM.png' },
