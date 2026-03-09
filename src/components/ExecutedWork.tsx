@@ -67,12 +67,11 @@ export default function ExecutedWork() {
                 ) : (
                   <>
                     <video
-                      src={project.src}
+                      src={`${project.src}#t=0.001`}
                       className="w-full h-full object-cover relative z-0 cursor-pointer opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                      autoPlay
-                      loop
-                      muted
+                      preload="metadata"
                       playsInline
+                      muted
                       onClick={() => {
                         setSelectedImage({ src: project.src, title: project.title, category: 'Executed Work', type: 'video' });
                       }}
