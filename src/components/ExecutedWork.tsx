@@ -8,7 +8,7 @@ import { executedWork, ExecutedProject } from '@/data/executed';
 import FullscreenGallery from './FullscreenGallery';
 
 export default function ExecutedWork() {
-  const [selectedImage, setSelectedImage] = useState<{ src?: string; title: string; category: string } | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src?: string; title: string; category: string; type: 'image' | 'video' } | null>(null);
   const [playingVideos, setPlayingVideos] = useState<Record<string, boolean>>({});
 
   // Helper function to map format to grid span classes
@@ -55,7 +55,7 @@ export default function ExecutedWork() {
                       fill
                       className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out cursor-pointer"
                       onClick={() => {
-                        setSelectedImage({ src: project.src, title: project.title, category: 'Executed Work' });
+                        setSelectedImage({ src: project.src, title: project.title, category: 'Executed Work', type: 'image' });
                       }}
                     />
                     <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -68,12 +68,23 @@ export default function ExecutedWork() {
                   <>
                     <video
                       src={project.src}
-                      className="w-full h-full object-cover relative z-0"
+                      className="w-full h-full object-cover relative z-0 cursor-pointer opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                       autoPlay
                       loop
                       muted
                       playsInline
+                      onClick={() => {
+                        setSelectedImage({ src: project.src, title: project.title, category: 'Executed Work', type: 'video' });
+                      }}
                     />
+                    {/* Play Icon Centered (Thumbnail indicator) */}
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center pointer-events-none transition-transform duration-500 group-hover:scale-110"
+                    >
+                      <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1a1a1a] shadow-2xl">
+                        <Play size={24} className="ml-1" />
+                      </div>
+                    </div>
                     {/* Video Title Overlay */}
                     <div className="absolute top-0 left-0 w-full p-6 bg-gradient-to-b from-black/60 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                       <h3 className="text-white font-bold text-xl tracking-tight drop-shadow-md">

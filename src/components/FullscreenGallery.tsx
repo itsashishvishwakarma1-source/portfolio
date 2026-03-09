@@ -6,7 +6,12 @@ import Image from 'next/image';
 import { Project } from '@/data/projects';
 
 interface FullscreenGalleryProps {
-  project: Project | null;
+  project: {
+    src: string;
+    title: string;
+    category: string;
+    type?: 'image' | 'video';
+  } | null;
   onClose: () => void;
 }
 
@@ -39,13 +44,23 @@ export default function FullscreenGallery({ project, onClose }: FullscreenGaller
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative w-full max-w-6xl h-[70vh] md:h-[80vh]">
-              <Image
-                src={project.src}
-                alt={project.title}
-                fill
-                className="object-contain"
-                priority
-              />
+              {project.type === 'video' ? (
+                <video
+                  src={project.src}
+                  className="w-full h-full object-contain"
+                  controls
+                  autoPlay
+                  playsInline
+                />
+              ) : (
+                <Image
+                  src={project.src}
+                  alt={project.title}
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              )}
             </div>
             
             <div className="text-center">
