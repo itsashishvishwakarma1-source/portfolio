@@ -23,7 +23,7 @@ export default function VideoCarousel() {
       <div className="container mx-auto px-4 md:px-8 mb-12 flex items-end justify-between">
         <div>
           <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase text-[#1a1a1a]">
-            Visuals to Real
+            How would it look in real
           </h2>
           <p className="text-[#1a1a1a]/60 font-mono text-sm tracking-[0.3em] uppercase mt-2">
             Bringing concepts to life
