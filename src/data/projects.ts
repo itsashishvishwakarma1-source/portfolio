@@ -3,66 +3,70 @@ export interface Project {
   title: string;
   category: string;
   src: string;
+  type?: 'image' | 'video';
   width?: number;
   height?: number;
 }
 
 export const projects: Project[] = [
-  // Billboard & OOH
-  { id: 'b1', title: 'Billboard Display', category: 'Billboard', src: '/projects/Billboard/Billord-.jpg' },
-  { id: 'b2', title: 'Tanishq Campaign', category: 'Billboard', src: '/projects/Billboard/Tanishq 2x1_day.jpg' },
-  { id: 'b3', title: 'Creative Surprise', category: 'Billboard', src: '/projects/Billboard/Surprise-.jpg' },
-  { id: 'b4', title: 'Outreach Campaign', category: 'Billboard', src: '/projects/Billboard/Screenshot 2026-03-08 at 3.39.47 PM.png' },
-  { id: 'b5', title: 'Scale Visualization', category: 'Billboard', src: '/projects/Billboard/Screenshot 2026-03-08 at 3.40.15 PM.png' },
-  { id: 'b6', title: 'Urban Impact', category: 'Billboard', src: '/projects/Billboard/Screenshot 2026-03-08 at 3.43.31 PM.png' },
-  { id: 'b7', title: 'City Takeover', category: 'Billboard', src: '/projects/Billboard/Screenshot 2026-03-08 at 3.45.33 PM.png' },
-  { id: 'b8', title: 'Night Visibility', category: 'Billboard', src: '/projects/Billboard/Screenshot 2026-03-08 at 3.48.18 PM.png' },
-  { id: 'b9', title: 'Street Level', category: 'Billboard', src: '/projects/Billboard/Screenshot 2026-03-08 at 3.49.44 PM.png' },
-
   // AI Renders
-  { id: 'ai1', title: 'Conceptual AI Art', category: 'AI Renders', src: '/projects/AI Renders/Screenshot 2026-03-08 at 3.29.33 PM.png' },
-  { id: 'ai2', title: 'Visual Synthesis', category: 'AI Renders', src: '/projects/AI Renders/Screenshot 2026-03-08 at 3.29.47 PM.png' },
-  { id: 'ai3', title: 'Digital Exploration', category: 'AI Renders', src: '/projects/AI Renders/Screenshot 2026-03-08 at 3.30.03 PM.png' },
-  { id: 'ai4', title: 'Generative Design', category: 'AI Renders', src: '/projects/AI Renders/Screenshot 2026-03-08 at 3.46.28 PM.png' },
-  { id: 'ai5', title: 'Future Aesthetics', category: 'AI Renders', src: '/projects/AI Renders/Screenshot 2026-03-08 at 3.46.36 PM.png' },
-  { id: 'ai6', title: 'AI Concept 01', category: 'AI Renders', src: '/projects/AI Renders/Screenshot 2026-03-08 at 3.46.44 PM.png' },
-  { id: 'ai7', title: 'AI Concept 02', category: 'AI Renders', src: '/projects/AI Renders/Screenshot 2026-03-08 at 3.46.52 PM.png' },
-  { id: 'ai8', title: 'AI Concept 03', category: 'AI Renders', src: '/projects/AI Renders/Screenshot 2026-03-08 at 3.47.06 PM.png' },
+  { id: 'ai1', title: 'Screenshot_2026-03-08_at_3.29.33_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.29.33_PM.png' },
+  { id: 'ai2', title: 'Screenshot_2026-03-08_at_3.29.47_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.29.47_PM.png' },
+  { id: 'ai3', title: 'Screenshot_2026-03-08_at_3.30.03_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.30.03_PM.png' },
+  { id: 'ai4', title: 'Screenshot_2026-03-08_at_3.46.28_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.46.28_PM.png' },
+  { id: 'ai5', title: 'Screenshot_2026-03-08_at_3.46.36_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.46.36_PM.png' },
+  { id: 'ai6', title: 'Screenshot_2026-03-08_at_3.46.44_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.46.44_PM.png' },
+  { id: 'ai7', title: 'Screenshot_2026-03-08_at_3.46.52_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.46.52_PM.png' },
+  { id: 'ai8', title: 'Screenshot_2026-03-08_at_3.47.06_PM', category: 'AI Renders', src: '/projects/AI Renders/Screenshot_2026-03-08_at_3.47.06_PM.png' },
+  { id: 'ai9', title: 'gateway', category: 'AI Renders', type: 'video', src: '/projects/AI Renders/gateway.mp4' },
+  { id: 'ai10', title: 'snowingbillboard', category: 'AI Renders', type: 'video', src: '/projects/AI Renders/snowingbillboard.mp4' },
+  { id: 'ai11', title: 'swiggyholi', category: 'AI Renders', type: 'video', src: '/projects/AI Renders/swiggyholi.mp4' },
 
-  // Activation & BQS
-  { id: 'act1', title: 'Live Event Painting', category: 'Activation', src: '/projects/Activation/Live-Painting.jpg' },
-  { id: 'act2', title: 'Brand Activation', category: 'Activation', src: '/projects/Activation/Look-Walkers.jpg' },
-  { id: 'act3', title: 'Swiggy Campaign', category: 'Activation', src: '/projects/Activation/Swiggy-Makkhan-.jpg' },
-  { id: 'act4', title: 'Interaction Design', category: 'Activation', src: '/projects/Activation/Screenshot 2026-03-08 at 3.36.05 PM.png' },
-  { id: 'act5', title: 'Event Experience', category: 'Activation', src: '/projects/Activation/Screenshot 2026-03-08 at 3.51.17 PM.png' },
-  { id: 'bqs1', title: 'Amul Macho BQS', category: 'BQS', src: '/projects/BQS/Amul Macho_vol 5.jpg' },
-  { id: 'bqs2', title: 'Transit Shelter', category: 'BQS', src: '/projects/BQS/Screenshot 2026-03-08 at 3.45.03 PM.png' },
-  { id: 'bqs3', title: 'Urban Mobility', category: 'BQS', src: '/projects/BQS/Screenshot 2026-03-08 at 3.51.52 PM.png' },
+  // Activation
+  { id: 'act1', title: 'Auto_Rikshaw_copy', category: 'Activation', src: '/projects/Activation/Auto_Rikshaw_copy.jpg' },
+  { id: 'act2', title: 'Live-Painting', category: 'Activation', src: '/projects/Activation/Live-Painting.jpg' },
+  { id: 'act3', title: 'Look-Walkers', category: 'Activation', src: '/projects/Activation/Look-Walkers.jpg' },
+  { id: 'act4', title: 'Screenshot_2026-03-08_at_3.36.05_PM', category: 'Activation', src: '/projects/Activation/Screenshot_2026-03-08_at_3.36.05_PM.png' },
+  { id: 'act5', title: 'Screenshot_2026-03-08_at_3.51.17_PM', category: 'Activation', src: '/projects/Activation/Screenshot_2026-03-08_at_3.51.17_PM.png' },
+  { id: 'act6', title: 'Swiggy-Makkhan-', category: 'Activation', src: '/projects/Activation/Swiggy-Makkhan-.jpg' },
+
+  // BQS
+  { id: 'bqs1', title: 'Amul_Macho_vol_5', category: 'BQS', src: '/projects/BQS/Amul_Macho_vol_5.jpg' },
+  { id: 'bqs2', title: 'Screenshot_2026-03-08_at_3.45.03_PM', category: 'BQS', src: '/projects/BQS/Screenshot_2026-03-08_at_3.45.03_PM.png' },
+  { id: 'bqs3', title: 'Screenshot_2026-03-08_at_3.51.52_PM', category: 'BQS', src: '/projects/BQS/Screenshot_2026-03-08_at_3.51.52_PM.png' },
+
+  // Billboard
+  { id: 'b1', title: 'Billord-', category: 'Billboard', src: '/projects/Billboard/Billord-.jpg' },
+  { id: 'b2', title: 'Screenshot_2026-03-08_at_3.39.47_PM', category: 'Billboard', src: '/projects/Billboard/Screenshot_2026-03-08_at_3.39.47_PM.png' },
+  { id: 'b3', title: 'Screenshot_2026-03-08_at_3.40.15_PM', category: 'Billboard', src: '/projects/Billboard/Screenshot_2026-03-08_at_3.40.15_PM.png' },
+  { id: 'b4', title: 'Screenshot_2026-03-08_at_3.43.31_PM', category: 'Billboard', src: '/projects/Billboard/Screenshot_2026-03-08_at_3.43.31_PM.png' },
+  { id: 'b5', title: 'Screenshot_2026-03-08_at_3.45.33_PM', category: 'Billboard', src: '/projects/Billboard/Screenshot_2026-03-08_at_3.45.33_PM.png' },
+  { id: 'b6', title: 'Screenshot_2026-03-08_at_3.48.18_PM', category: 'Billboard', src: '/projects/Billboard/Screenshot_2026-03-08_at_3.48.18_PM.png' },
+  { id: 'b7', title: 'Screenshot_2026-03-08_at_3.49.44_PM', category: 'Billboard', src: '/projects/Billboard/Screenshot_2026-03-08_at_3.49.44_PM.png' },
+  { id: 'b8', title: 'Surprise-', category: 'Billboard', src: '/projects/Billboard/Surprise-.jpg' },
+  { id: 'b9', title: 'Tanishq_2x1_day', category: 'Billboard', src: '/projects/Billboard/Tanishq_2x1_day.jpg' },
+  { id: 'b10', title: 'frozenbillboard', category: 'Billboard', src: '/projects/Billboard/frozenbillboard.jpg' },
+  { id: 'b11', title: 'frozencanter', category: 'Billboard', src: '/projects/Billboard/frozencanter.jpg' },
+  { id: 'b12', title: 'ladder', category: 'Billboard', src: '/projects/Billboard/ladder.jpg' },
+  { id: 'b13', title: 'swiggyholicollab', category: 'Billboard', src: '/projects/Billboard/swiggyholicollab.jpg' },
 
   // Installation
-  { id: 'inst1', title: 'Spatial Design', category: 'Installation', src: '/projects/Installation/Screenshot 2026-03-08 at 3.24.51 PM.png' },
-  { id: 'inst2', title: 'Concept Space', category: 'Installation', src: '/projects/Installation/Screenshot 2026-03-08 at 3.26.45 PM.png' },
-  { id: 'inst3', title: 'Exhibition Element', category: 'Installation', src: '/projects/Installation/Screenshot 2026-03-08 at 3.35.35 PM.png' },
-  { id: 'inst4', title: 'Installation Art', category: 'Installation', src: '/projects/Installation/Screenshot 2026-03-08 at 3.41.56 PM.png' },
-  { id: 'inst5', title: 'Visual Spatial', category: 'Installation', src: '/projects/Installation/Screenshot 2026-03-08 at 3.42.49 PM.png' },
-  { id: 'inst6', title: 'Structure Concept', category: 'Installation', src: '/projects/Installation/Screenshot 2026-03-08 at 3.44.03 PM.png' },
-  { id: 'inst7', title: 'Material Play', category: 'Installation', src: '/projects/Installation/Screenshot 2026-03-08 at 3.44.21 PM.png' },
-  { id: 'inst8', title: 'Exhibition 02', category: 'Installation', src: '/projects/Installation/Screenshot 2026-03-08 at 3.48.52 PM.png' },
-  { id: 'inst9', title: 'Final Reveal', category: 'Installation', src: '/projects/Installation/Screenshot 2026-03-08 at 3.49.11 PM.png' },
+  { id: 'inst1', title: 'Frozenman', category: 'Installation', src: '/projects/Installation/Frozenman.jpg' },
+  { id: 'inst2', title: 'Frozenmannight', category: 'Installation', src: '/projects/Installation/Frozenmannight.jpg' },
+  { id: 'inst3', title: 'Screenshot_2026-03-08_at_3.24.51_PM', category: 'Installation', src: '/projects/Installation/Screenshot_2026-03-08_at_3.24.51_PM.png' },
+  { id: 'inst4', title: 'Screenshot_2026-03-08_at_3.26.45_PM', category: 'Installation', src: '/projects/Installation/Screenshot_2026-03-08_at_3.26.45_PM.png' },
+  { id: 'inst5', title: 'Screenshot_2026-03-08_at_3.35.35_PM', category: 'Installation', src: '/projects/Installation/Screenshot_2026-03-08_at_3.35.35_PM.png' },
+  { id: 'inst6', title: 'Screenshot_2026-03-08_at_3.41.56_PM', category: 'Installation', src: '/projects/Installation/Screenshot_2026-03-08_at_3.41.56_PM.png' },
+  { id: 'inst7', title: 'Screenshot_2026-03-08_at_3.42.49_PM', category: 'Installation', src: '/projects/Installation/Screenshot_2026-03-08_at_3.42.49_PM.png' },
+  { id: 'inst8', title: 'Screenshot_2026-03-08_at_3.44.03_PM', category: 'Installation', src: '/projects/Installation/Screenshot_2026-03-08_at_3.44.03_PM.png' },
+  { id: 'inst9', title: 'Screenshot_2026-03-08_at_3.44.21_PM', category: 'Installation', src: '/projects/Installation/Screenshot_2026-03-08_at_3.44.21_PM.png' },
+  { id: 'inst10', title: 'Screenshot_2026-03-08_at_3.48.52_PM', category: 'Installation', src: '/projects/Installation/Screenshot_2026-03-08_at_3.48.52_PM.png' },
+  { id: 'inst11', title: 'Screenshot_2026-03-08_at_3.49.11_PM', category: 'Installation', src: '/projects/Installation/Screenshot_2026-03-08_at_3.49.11_PM.png' },
+  { id: 'inst12', title: 'Screenshot_2026-03-08_at_3.50.37_PM', category: 'Installation', src: '/projects/Installation/Screenshot_2026-03-08_at_3.50.37_PM.png' },
 
-  // Print Ad
-  { id: 'pr1', title: 'Print Layout 01', category: 'Print Ad', src: '/projects/Print Ad/1.jpg' },
-  { id: 'pr4', title: '10 Minute Delivery 1', category: 'Print Ad', src: '/projects/Print Ad/10minute1.jpg' },
-  { id: 'pr5', title: '10 Minute Delivery 2', category: 'Print Ad', src: '/projects/Print Ad/10minute2.jpg' },
-  { id: 'pr6', title: '10 Minute Delivery 3', category: 'Print Ad', src: '/projects/Print Ad/10minute3.jpg' },
-  { id: 'pr7', title: 'Girl Fight', category: 'Print Ad', src: '/projects/Print Ad/girl_fight02_2.jpg' },
-  { id: 'pr8', title: 'Pregnant Lady', category: 'Print Ad', src: '/projects/Print Ad/pregnant_lady_011.jpg' },
-  { id: 'pr9', title: 'GF & BF', category: 'Print Ad', src: '/projects/Print Ad/Gf_Bf.jpg' },
-  { id: 'pr10', title: 'Newspaper Layout', category: 'Print Ad', src: '/projects/Print Ad/Newspaper_copy.jpg' },
-  { id: 'pr11', title: 'Editorial Work', category: 'Print Ad', src: '/projects/Print Ad/Screenshot_2026-03-08_at_3.33.40 PM.png' },
-
-  // Story Board
-  { id: 'sb1', title: 'Campaign Storyboard', category: 'Story Board', src: '/projects/Story Boards/Screenshot 2026-03-08 at 3.34.40 PM.png' },
+  // Story Boards
+  { id: 'sb1', title: 'AC_TVC', category: 'Story Boards', src: '/projects/Story Boards/AC_TVC.png' },
+  { id: 'sb2', title: 'Screenshot_2026-03-08_at_3.34.40_PM', category: 'Story Boards', src: '/projects/Story Boards/Screenshot_2026-03-08_at_3.34.40_PM.png' },
 ];
 
 export interface VideoProject {
@@ -75,7 +79,7 @@ export const videos: VideoProject[] = [
   { id: 'v1', title: 'Anamorphic Display', src: '/projects/Visuals to Real/Anamorphic.mp4' },
   { id: 'v2', title: 'Interactive Floor', src: '/projects/Visuals to Real/Man_Jumping_On_Lit_Tiles_Video.mp4' },
   { id: 'v3', title: 'Moving Centerpiece', src: '/projects/Visuals to Real/Video_Generation_Moving_Canter.mp4' },
-  { id: 'v4', title: 'Walkthrough Gen 1', src: '/projects/Visuals to Real/Video_Walk_Through_Generation_1 02.mp4' },
-  { id: 'v5', title: 'Mia Bee Cab', src: '/projects/Visuals to Real/mia bee cab.mp4' },
+  { id: 'v4', title: 'Walkthrough Gen 1', src: '/projects/Visuals to Real/Video_Walk_Through_Generation_1_02.mp4' },
+  { id: 'v5', title: 'Mia Bee Cab', src: '/projects/Visuals to Real/mia_bee_cab.mp4' },
 ];
 

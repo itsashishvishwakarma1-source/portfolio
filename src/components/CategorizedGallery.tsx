@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { projects, Project } from '@/data/projects';
+import { Play } from 'lucide-react';
 import FullscreenGallery from './FullscreenGallery';
 
 export default function CategorizedGallery() {
@@ -64,12 +65,29 @@ export default function CategorizedGallery() {
                     onClick={() => setSelectedProject(project)}
                     className="relative flex-shrink-0 w-[80vw] md:w-[45vw] lg:w-[30vw] aspect-[4/5] snap-center rounded-xl overflow-hidden cursor-pointer group shadow-lg bg-white/20 border border-white/30"
                   >
-                    <Image
-                      src={project.src}
-                      alt={project.title}
-                      fill
-                      className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
-                    />
+                    {project.type === 'video' ? (
+                      <>
+                        <video
+                          src={`${project.src}#t=0.001`}
+                          className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                          preload="metadata"
+                          playsInline
+                          muted
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none transition-transform duration-500 group-hover:scale-110">
+                          <div className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1a1a1a] shadow-2xl">
+                            <Play size={20} className="ml-1" />
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <Image
+                        src={project.src}
+                        alt={project.title}
+                        fill
+                        className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                      />
+                    )}
                     
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
