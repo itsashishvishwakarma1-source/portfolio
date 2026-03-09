@@ -26,7 +26,7 @@ export default function CategorizedGallery() {
         {/* Gallery Header */}
         <div className="mb-24 text-center">
           <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-4 text-[#1a1a1a]">
-            Selected Works
+            Out Of Homes
           </h2>
           <p className="text-[#1a1a1a]/60 font-mono text-sm tracking-[0.3em] uppercase">
             A curated archive of creative discourse
