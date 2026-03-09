@@ -22,7 +22,7 @@ export default function Awards() {
         {/* Section Header */}
         <div className="mb-20">
           <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-2">
-            Accolades
+            Awards
           </h2>
           <div className="w-24 h-1 bg-white/20 mb-6"></div>
           <p className="font-mono text-sm tracking-[0.3em] uppercase text-white/50">
