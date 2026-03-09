@@ -16,6 +16,8 @@ const clients = [
   { name: 'TATA Motors', logo: '/logos/tatamotors.svg' },
   { name: 'Stanley', logo: '/logos/stanley.png' },
   { name: 'Snacc', logo: '/logos/snacc.png' },
+  { name: 'TATA IPL', logo: '/logos/tataipl.png' },
+  { name: 'Philips', logo: '/logos/philips.png' },
 ];
 
 const ClientMarquee = () => {
