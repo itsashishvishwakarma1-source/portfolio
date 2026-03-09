@@ -1,11 +1,12 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { videos } from '@/data/projects';
 import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function VideoCarousel() {
   const carouselRef = useRef<HTMLDivElement>(null);
+  const [playingVideos, setPlayingVideos] = useState<Record<string, boolean>>({});
 
   const scroll = (direction: 'left' | 'right') => {
     if (carouselRef.current) {
@@ -58,13 +59,29 @@ export default function VideoCarousel() {
         {videos.map((video) => (
           <div 
             key={video.id} 
-            className="relative w-[85vw] md:w-[60vw] lg:w-[45vw] aspect-video flex-shrink-0 snap-center group overflow-hidden rounded-2xl border border-[#1a1a1a]/10 bg-black/5"
+            className="relative w-[85vw] md:w-[60vw] lg:w-[45vw] aspect-video flex-shrink-0 snap-center group overflow-hidden rounded-2xl border border-[#1a1a1a]/10 bg-black/5 cursor-pointer"
+            onClick={(e) => {
+              // Prevent double-toggling if they clicked the native controls directly (bottom 15% of video)
+              const rect = e.currentTarget.getBoundingClientRect();
+              const clickY = e.clientY - rect.top;
+              if (clickY > rect.height * 0.85) return; // Ignore clicks on the native controls area
+              
+              const videoEl = document.getElementById(`carousel-video-${video.id}`) as HTMLVideoElement;
+              if (videoEl) {
+                if (videoEl.paused) {
+                  videoEl.play();
+                } else {
+                  videoEl.pause();
+                }
+              }
+            }}
           >
             {/* 
               Video Element with #t=0.001 
               This forces the browser to fetch the first frame as a thumbnail poster 
             */}
             <video
+              id={`carousel-video-${video.id}`}
               src={`${video.src}#t=0.001`}
               className="w-full h-full object-cover"
               loop
@@ -72,10 +89,12 @@ export default function VideoCarousel() {
               playsInline
               controls
               preload="metadata"
+              onPlay={() => setPlayingVideos(prev => ({ ...prev, [video.id]: true }))}
+              onPause={() => setPlayingVideos(prev => ({ ...prev, [video.id]: false }))}
             />
             
-            {/* Custom Play Overlay (fades out when hovered or interacted with) */}
-            <div className="absolute inset-0 pointer-events-none flex items-center justify-center bg-black/20 group-hover:opacity-0 transition-opacity duration-300">
+            {/* Custom Play Overlay (fades out when native controls are used or video starts) */}
+            <div className={`absolute inset-0 pointer-events-none flex items-center justify-center bg-black/20 transition-opacity duration-300 ${playingVideos[video.id] ? 'opacity-0' : 'group-hover:opacity-0'}`}>
               <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1a1a1a] shadow-xl">
                 <Play size={24} className="ml-1" />
               </div>

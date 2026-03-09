@@ -9,6 +9,7 @@ import FullscreenGallery from './FullscreenGallery';
 
 export default function ExecutedWork() {
   const [selectedImage, setSelectedImage] = useState<{ src?: string; title: string; category: string } | null>(null);
+  const [playingVideos, setPlayingVideos] = useState<Record<string, boolean>>({});
 
   // Helper function to map format to grid span classes
   const getGridClasses = (format: string, index: number) => {
@@ -45,10 +46,24 @@ export default function ExecutedWork() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 className={`relative rounded-2xl overflow-hidden group shadow-lg bg-black/5 border border-white/20 ${getGridClasses(project.format, index)}`}
-                onClick={() => {
+                onClick={(e) => {
                   // Only open fullscreen for images. Videos natively play in place.
                   if (project.type === 'image') {
                     setSelectedImage({ src: project.src, title: project.title, category: 'Executed Work' });
+                  } else {
+                    // Prevent double-toggling if they clicked the native controls directly (bottom 15% of video)
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const clickY = e.clientY - rect.top;
+                    if (clickY > rect.height * 0.85) return; // Ignore clicks on the native controls area
+                    
+                    const videoEl = document.getElementById(`video-${project.id}`) as HTMLVideoElement;
+                    if (videoEl) {
+                      if (videoEl.paused) {
+                        videoEl.play();
+                      } else {
+                        videoEl.pause();
+                      }
+                    }
                   }
                 }}
               >
@@ -69,16 +84,19 @@ export default function ExecutedWork() {
                 ) : (
                   <>
                     <video
+                      id={`video-${project.id}`}
                       src={`${project.src}#t=0.001`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover cursor-pointer"
                       loop
                       muted
                       playsInline
                       controls
                       preload="metadata"
+                      onPlay={() => setPlayingVideos(prev => ({ ...prev, [project.id]: true }))}
+                      onPause={() => setPlayingVideos(prev => ({ ...prev, [project.id]: false }))}
                     />
                     {/* Custom Play Overlay (fades out when native controls are used or video starts) */}
-                    <div className="absolute inset-0 pointer-events-none flex items-center justify-center bg-black/20 group-hover:opacity-0 transition-opacity duration-300">
+                    <div className={`absolute inset-0 pointer-events-none flex items-center justify-center bg-black/20 transition-opacity duration-300 ${playingVideos[project.id] ? 'opacity-0' : 'group-hover:opacity-0'}`}>
                       <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1a1a1a] shadow-xl">
                         <Play size={24} className="ml-1" />
                       </div>
