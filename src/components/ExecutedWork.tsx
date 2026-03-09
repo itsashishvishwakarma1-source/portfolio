@@ -67,7 +67,7 @@ export default function ExecutedWork() {
                 ) : (
                   <>
                     <video
-                      src={`${project.src}#t=0.001`}
+                      src={`${project.src}#t=${project.thumbnailTime || 0.001}`}
                       className="w-full h-full object-cover relative z-0 cursor-pointer opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                       preload="metadata"
                       playsInline

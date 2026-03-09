@@ -4,6 +4,7 @@ export interface ExecutedProject {
   type: 'image' | 'video';
   src: string;
   thumbnail?: string;
+  thumbnailTime?: number;
   format: 'landscape' | 'portrait' | 'square';
 }
 
@@ -13,6 +14,7 @@ export const executedWork: ExecutedProject[] = [
     title: 'Gold Bar',
     type: 'video',
     src: '/projects/Executed work/Gold_Bar.mp4',
+    thumbnailTime: 15,
     format: 'landscape',
   },
   {
@@ -20,6 +22,7 @@ export const executedWork: ExecutedProject[] = [
     title: 'Boodhe Hoke Kya Banoge',
     type: 'video',
     src: '/projects/Executed work/boodhehokekyabanoge.mp4',
+    thumbnailTime: 15,
     format: 'landscape',
   },
   {
